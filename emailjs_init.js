@@ -34,7 +34,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
   // Create an object with email parameters
   const emailParams = {
-    to_name: "Recipient Name", // You can customize this
+    to_name: "Saju", // You can customize this
     from_name: fromName,
     subject: "Subject", // You can customize this
     message: userMessage,
