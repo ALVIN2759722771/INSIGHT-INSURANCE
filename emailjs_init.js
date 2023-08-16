@@ -1,9 +1,9 @@
 // Initialize EmailJS with your user ID
-emailjs.init("BiaPo4xbWEKi0f83F");
+emailjs.init("YOUR_USER_ID");
 
 // Constants for EmailJS
-const SERVICE_ID = "service_wx7x9la";
-const TEMPLATE_ID = "service_wx7x9la";
+const SERVICE_ID = "your_service_id"; // Replace with your service ID
+const TEMPLATE_ID = "your_template_id"; // Replace with your template ID
 
 // Function to send the email using EmailJS
 function sendEmail(emailParams) {
