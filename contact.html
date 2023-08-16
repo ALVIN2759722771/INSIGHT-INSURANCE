@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
   <style>
     /* Your existing styles here */
+    /* ... */
 
     /* New styles for enhancements */
     .form-label {
@@ -67,10 +68,13 @@
   <form id="contactForm">
     <label for="from_name" class="form-label">Your Name</label>
     <input type="text" name="from_name" id="from_name" class="form-input" required>
+
     <label for="email" class="form-label">Your Email</label>
     <input type="email" name="email" id="email" class="form-input" required>
+
     <label for="message" class="form-label">Message</label>
     <textarea name="message" id="message" class="message-box" required></textarea>
+
     <label for="questions" class="form-label">Select a Question:</label>
     <select id="questions" class="form-input">
       <option value="">Choose a question...</option>
@@ -79,7 +83,9 @@
       <option value="Do you have any special offers?">Do you have any special offers?</option>
       <!-- Add more options as needed -->
     </select>
+
     <button type="submit" class="submit-button">Send Email</button>
+
     <p class="error-message" id="errorText"></p>
     <p class="success-message" id="successText"></p>
   </form>
