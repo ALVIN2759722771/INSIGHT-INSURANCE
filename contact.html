@@ -17,6 +17,36 @@
       padding: 0;
     }
 
+    .hero {
+      background-color: #0084b4;
+      color: white;
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    .form-container {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .form-container h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
     /* ... Your existing styles ... */
 
     /* Add styling for chatbot button */
@@ -51,14 +81,7 @@
     <label for="from_name" class="form-label">Your Name</label>
     <input type="text" name="from_name" id="from_name" class="form-input" required>
 
-    <label for="email" class="form-label">Your Email</label>
-    <input type="email" name="email" id="email" class="form-input" required>
-
-    <label for="subject" class="form-label">Subject</label>
-    <input type="text" name="subject" id="subject" class="form-input" required>
-
-    <label for="message" class="form-label">Message</label>
-    <textarea name="message" id="message" class="message-box" required></textarea>
+    <!-- ... Your existing input fields ... -->
 
     <button type="submit" class="submit-button">Send Email</button>
 
