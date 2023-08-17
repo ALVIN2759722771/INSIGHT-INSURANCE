@@ -134,10 +134,10 @@
     <input type="email" name="email" id="email" class="form-input" required>
 
     <label for="subject" class="form-label">Subject</label>
-    <input type="text" name="subject" id="subject" class="form-input" required>
+    <input type="text" name="subject" id="subject" class="form-input" required value="Preloaded Subject">
 
     <label for="message" class="form-label">Message</label>
-    <textarea name="message" id="message" class="message-box" required></textarea>
+    <textarea name="message" id="message" class="message-box" required>How can we assist you today?</textarea>
 
     <button type="submit" class="submit-button">Send Email</button>
 
@@ -170,8 +170,8 @@
         // Clear form fields
         document.getElementById("from_name").value = "";
         document.getElementById("email").value = "";
-        document.getElementById("subject").value = "";
-        document.getElementById("message").value = "";
+        document.getElementById("subject").value = "Preloaded Subject";
+        document.getElementById("message").value = "How can we assist you today?";
       })
       .catch(function(error) {
         document.getElementById("errorText").innerText = "Failed to send email. Please try again later.";
