@@ -1,127 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
-  <style>
-    /* Your existing styles here */
-    /* ... */
-
-    /* New styles for special effects and design */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      margin: 0;
-      padding: 0;
-    }
-
-    .hero {
-      background-color: #0084b4;
-      color: white;
-      text-align: center;
-      padding: 60px 0;
-    }
-
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 18px;
-    }
-
-    .form-container {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-    }
-
-    .form-container h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 5px;
-    }
-
-    .form-input, .message-box {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 15px;
-    }
-
-    .submit-button {
-      background-color: #0084b4;
-      color: white;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .submit-button:hover {
-      background-color: #005d7e;
-    }
-
-    .error-message, .success-message {
-      font-size: 16px;
-      margin-top: 10px;
-    }
-  </style>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-</head>
-<body>
-
-<section class="hero">
-  <h2>Contact Us</h2>
-  <p>We'd love to hear from you. Drop us a message below.</p>
-</section>
-
-<div class="form-container">
-  <h3>Contact Form</h3>
-  <form id="contactForm">
-    <label for="from_name" class="form-label">Your Name</label>
-    <input type="text" name="from_name" id="from_name" class="form-input" required>
-
-    <label for="email" class="form-label">Your Email</label>
-    <input type="email" name="email" id="email" class="form-input" required>
-
-    <label for="subject" class="form-label">Subject</label>
-    <input type="text" name="subject" id="subject" class="form-input" required>
-
-    <label for="message" class="form-label">Message</label>
-    <textarea name="message" id="message" class="message-box" required></textarea>
-
-    <button type="submit" class="submit-button">Send Email</button>
-
-    <p class="error-message" id="errorText"></p>
-    <p class="success-message" id="successText"></p>
-  </form>
-</div>
+<!-- Your existing code ... -->
 
 <script src="emailjs_init.js"></script>
 <script>
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
+    // Extract user inputs
     const fromName = document.getElementById("from_name").value;
     const userEmail = document.getElementById("email").value;
     const emailSubject = document.getElementById("subject").value;
     const userMessage = document.getElementById("message").value;
 
+    // Prepare email parameters
     const emailParams = {
       to_name: "Recipient Name",
       from_name: fromName,
@@ -130,9 +20,12 @@
       message: userMessage
     };
 
+    // Send email using emailjs
     emailjs.send("default_service", "template_6le5ttk", emailParams)
       .then(function(response) {
+        // Show success message
         document.getElementById("successText").innerText = "Email sent successfully!";
+        
         // Clear form fields
         document.getElementById("from_name").value = "";
         document.getElementById("email").value = "";
@@ -140,14 +33,38 @@
         document.getElementById("message").value = "";
       })
       .catch(function(error) {
+        // Show error message
         document.getElementById("errorText").innerText = "Failed to send email. Please try again later.";
         console.error("Email Error:", error);
       });
   });
+
+  // Preloaded chatbot questions
+  const preloadedQuestions = [
+    "How can I assist you today?",
+    "What's your name?",
+    "What is your email?",
+    "What is the subject of your message?",
+    "Please provide more details about your message."
+  ];
+  
+  // Get chatbot elements
+  const messageBox = document.getElementById("message");
+  const nextQuestionButton = document.getElementById("nextQuestionButton");
+  let questionIndex = 0;
+
+  // Attach event listener to the "Next Question" button
+  nextQuestionButton.addEventListener("click", function() {
+    if (questionIndex < preloadedQuestions.length) {
+      // Load next preloaded question
+      messageBox.value = preloadedQuestions[questionIndex];
+      questionIndex++;
+    }
+  });
 </script>
 
+<!-- Add a link to the chatbot page -->
 <a href="chatbot.html">Go to Chatbot</a>
-  
-  
+
 </body>
 </html>
