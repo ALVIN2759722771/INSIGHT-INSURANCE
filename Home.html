@@ -16,7 +16,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #f0f4f8;
         }
 
         /* Header styles */
@@ -25,6 +25,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
@@ -41,7 +42,7 @@
         .header-box {
             background-color: #0056b3;
             color: #fff;
-            padding: 5px 15px;
+            padding: 10px 15px;
             border-radius: 5px;
             text-decoration: none;
             transition: background-color 0.3s;
@@ -49,6 +50,57 @@
 
         .header-box:hover {
             background-color: #004494;
+        }
+
+        /* Hero section */
+        .hero {
+            background-image: url('WhatsApp Image 2023-08-08 at 23.31.31.png');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 18px;
+            z-index: 2;
+            position: relative;
+        }
+
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            z-index: 2;
+            position: relative;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
         }
 
         /* Content section */
@@ -88,6 +140,15 @@
 
         ul li {
             margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: '✔️';
+            position: absolute;
+            left: 0;
+            color: #28a745;
         }
 
         /* Footer styles */
@@ -96,6 +157,9 @@
             color: white;
             text-align: center;
             padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         footer a {
@@ -131,9 +195,13 @@
     </nav>
 </header>
 
-<section>
+<div class="hero">
     <h2>Home Insurance</h2>
-    <p>Protect your home and belongings with our customizable home insurance options. Our goal is to provide you with peace of mind, knowing that your most valuable assets are covered in case of unexpected events.</p>
+    <p>Protect your home and belongings with our customizable home insurance options.</p>
+    <a class="cta-button" href="get-quote.html">Get a Quote</a>
+</div>
+
+<section>
     <h3>Types of Home Insurance Coverage:</h3>
     <ul>
         <li><strong>Dwelling Coverage:</strong> Covers the structure of your home in case of damage from covered perils.</li>
