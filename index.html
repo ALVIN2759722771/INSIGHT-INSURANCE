@@ -2,280 +2,233 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insight Insurance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insight Insurance - Better & Smarter</title>
+
+  <!-- Google Fonts for sexy fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+
   <style>
-       /* Reset some default styles for cleaner look */
-       * {
+    /* RESET */
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Typography */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Header */
-    header {
-      background-color: #f7f7f7;
-      padding: 10px 0;
-      text-align: center;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
     }
+
+    header {
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      padding: 20px;
+      color: white;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
     nav ul {
       list-style: none;
-      padding: 0;
+      margin-top: 10px;
     }
+
     nav ul li {
-      display: inline;
+      display: inline-block;
       margin: 0 15px;
     }
 
-    /* Box styles for header links */
-    .header-box {
-      background-color: #007bff;
-      color: #fff;
-      padding: 5px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      background-image: url('WhatsApp Image 2023-08-08 at 23.31.31.png');
-      background-size: cover;
-      color: #fff;
-      text-align: center;
-      padding: 100px 0;
-    }
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    .cta-button {
-      display: inline-block;
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
+    nav ul li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .cta-button:hover {
-      background-color: #0072ec;
-      transform: scale(1.05);
+      padding: 8px 15px;
+      border-radius: 30px;
+      transition: 0.3s;
     }
 
-    /* Sections */
-    section {
-      padding: 80px 0;
-      text-align: center;
-    }
-    section h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-    section p {
-      font-size: 18px;
-      margin-bottom: 40px;
+    nav ul li a:hover {
+      background: white;
+      color: #007bff;
     }
 
-    /* Service Cards */
-    .service-card {
-      background-color: #f7f7f7;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 6px #0000001a;
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      animation: fadeInHero 2s ease;
     }
 
-    /* Footer */
-    footer {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0;
-    }
-    footer p {
-      font-size: 14px;
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
     }
 
-    #login {
-      text-align: center;
-      padding: 50px 0;
-      background-color: #f7f7f7;
-    }
-    
-    #login h3 {
+    .hero p {
       font-size: 24px;
       margin-bottom: 20px;
     }
-    
-    #login-form {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 6px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    #login-form label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    
-    #login-form input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-    
-    #login-form button {
-      background-color: #007bff;
-      color: #fff;
+
+    .cta-button {
+      background: #ff416c;
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      padding: 15px 30px;
       border: none;
-      border-radius: 4px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-      background-blend-mode: overlay;
-    }
-    
-    #login-form button:hover {
-      background-color: #0056b3;
-    }
-    
-    /* Header styles */
-    header {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    nav ul {
-      list-style: none;
-    }
-
-    nav a {
-      color: #fff;
+      border-radius: 50px;
+      color: white;
+      font-size: 18px;
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      font-weight: bold;
+      transition: 0.3s;
+      animation: popUp 1.5s infinite alternate;
     }
 
+    .cta-button:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInHero {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes popUp {
+      from {transform: scale(1);}
+      to {transform: scale(1.05);}
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background: white;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeInSection 2s ease;
+    }
+
+    @keyframes fadeInSection {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    section p {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      font-size: 26px;
+      color: #333;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color: #111;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Small Devices */
+    @media(max-width:768px) {
+      .hero h1 {font-size: 35px;}
+      .hero p {font-size: 20px;}
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Insight Insurance</h1>
-    <nav>
-      <ul>
-        <li><a class="header-box" href="#services">Services</a></li>
-        <li><a class="header-box" href="#about">About Us</a></li>
-        <li><a class="header-box" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <div class="hero">
-    <h2>Your Trusted Partner in Protection</h2>
-    <p>Tailored Insurance Solutions for Every Aspect of Your Life</p>
-    <a class="cta-button" href="get-quote.html">Get a Quote</a>
+
+<header>
+  <h1>Insight Insurance</h1>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Your Future, Our Responsibility</h1>
+  <p>Insurance Solutions for Your Peace of Mind</p>
+  <a class="cta-button" href="#services">Explore Services</a>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <p>Comprehensive coverage plans crafted just for you</p>
+  <div class="service-card">
+    <h3>Auto Insurance</h3>
+    <p>Protect your ride. Drive stress-free with our tailored auto insurance policies.</p>
+    <a class="cta-button" href="Auto.html">Explore Auto Insurance</a>
   </div>
 
-  <section id="services" style="background-color: #f7f7f7;">
-    <h3>Our Services</h3>
-    <p>We provide a range of comprehensive insurance solutions to protect your assets and loved ones.</p>
-    <div class="service-card">
-      <h4>Auto Insurance</h4>
-      <p>Protect your vehicle with our reliable auto insurance plans.</p>
-      <a class="cta-button" href="Auto.html">Learn More</a>
-    </div>    
-    <div class="service-card">
-      <h4>Home Insurance</h4>
-      <p>Secure your home and belongings with our customizable home insurance options.</p>
-      <a class="cta-button" href="Home.html">Learn More</a>
-    </div>
-  </section>
+  <div class="service-card">
+    <h3>Home Insurance</h3>
+    <p>Safeguard your home and cherished belongings with our customized plans.</p>
+    <a class="cta-button" href="Home.html">Explore Home Insurance</a>
+  </div>
+</section>
 
-  <section id="about" style="background-color: #fff;">
-    <h3>About Insight Insurance</h3>
-    <p>At Insight Insurance, we're dedicated to delivering personalized protection and peace of mind.</p>
-    <div class="service-card">
-      <h4>Our Mission</h4>
-      <p>We are committed to providing the best insurance solutions tailored to your needs.</p>
-    </div>
-  </section>
+<section id="about">
+  <h2>About Insight Insurance</h2>
+  <p>We believe in delivering protection and building trust for a better tomorrow.</p>
+</section>
 
-  <section id="contact" style="background-color: #fff;">
-    <h3>Contact Us</h3>
-    <p>Get in touch with our friendly team today. We're here to answer your qurries and  questions.</p>
-    <a class="cta-button" href="contact.html">Contact Now</a>
-  </section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Questions? Concerns? Feel free to reach out to our friendly team.</p>
+  <a class="cta-button" href="contact.html">Let's Talk</a>
+</section>
 
-  <!-- Login Form -->
-  <section id="login">
-    <h3>Login</h3>
-    <form id="login-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
-      
-      <button type="submit">Login</button>
-    </form>
-  </section>
+<footer>
+  &copy; 2025 Insight Insurance. All rights reserved.
+</footer>
 
-  <footer>
-    <p>&copy; 2023 Insight Insurance. All rights reserved.</p>
-  </footer>
-
-  <script>
-    document.getElementById("login-form").addEventListener("submit", function(event) {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        sendUserData(name, email);
-    });
-
-    function sendUserData(name, email) {
-        // You can use various methods to send data securely, such as AJAX or fetch
-        // Here, we'll use a simple example with the fetch API
-        const url = "process-login.php"; // Replace with the actual PHP file URL
-        const data = { name, email };
-
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.text())
-        .then(result => {
-            alert(result); // Display the response from the server
-            // You can also redirect the user to another page here
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }
-  </script>
 </body>
 </html>
